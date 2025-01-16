@@ -56,17 +56,26 @@ nav {
   right: 1rem;
 }
 
-.menu p,
-.menu button {
-  cursor: pointer;
-}
-
 .menu button {
   padding: 0.5rem 1rem;
   font-size: 0.9rem;
   background-color: var(--color-blue);
   border: none;
   border-radius: 2px;
+}
+
+.menu button a {
+  text-decoration: none;
+  background-color: var(--color-blue);
+}
+
+.nav-link {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
 }
 
 @media (min-width: 1025px) {

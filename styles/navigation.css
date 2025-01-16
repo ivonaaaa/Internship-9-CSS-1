@@ -44,7 +44,6 @@ nav {
   left: 50%;
   display: flex;
   transform: translateX(-50%);
-  display: flex;
   flex-direction: column;
   text-align: center;
 }
@@ -57,7 +56,8 @@ nav {
   right: 1rem;
 }
 
-.menu p {
+.menu p,
+.menu button {
   cursor: pointer;
 }
 
@@ -67,7 +67,6 @@ nav {
   background-color: var(--color-blue);
   border: none;
   border-radius: 2px;
-  cursor: pointer;
 }
 
 @media (min-width: 1025px) {
@@ -83,53 +82,14 @@ nav {
 @media (max-width: 1024px) {
   .hamburger-menu {
     display: flex;
-    justify-content: flex-start;
   }
-
   .menu {
     display: none;
-  }
-
-  .menu button {
-    display: block;
-    margin-left: auto;
-  }
-
-  .hamburger-menu {
-    display: flex;
   }
 }
 
 @media (max-width: 720px) {
   .title {
     font-size: 1rem;
-  }
-
-  .menu {
-    gap: 0.5rem;
-  }
-
-  .menu p {
-    font-size: 0.8rem;
-  }
-
-  .menu button {
-    font-size: 0.8rem;
-    padding: 0.4rem 0.8rem;
-  }
-}
-
-@media (max-width: 420px) {
-  .title {
-    font-size: 0.8rem;
-  }
-
-  .menu p {
-    font-size: 0.7rem;
-  }
-
-  .menu button {
-    font-size: 0.7rem;
-    padding: 0.3rem 0.6rem;
   }
 }

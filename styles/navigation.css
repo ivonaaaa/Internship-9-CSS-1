@@ -13,13 +13,19 @@ nav {
 }
 
 .hamburger-menu {
-  display: none;
-  position: absolute;
-  left: 1rem;
+  display: flex;
+  align-items: center;
   cursor: pointer;
 }
 
-.hamburger-menu img {
+.hamburger-icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+
+.close-icon {
+  display: none;
   width: 24px;
   height: 24px;
 }
@@ -28,15 +34,52 @@ nav {
   display: none;
   flex-direction: column;
   gap: 0.5rem;
-  position: absolute;
-  top: 100%;
-  left: 1rem;
-  padding: 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  background-color: white;
   z-index: 10;
+  overflow-y: auto;
 }
 
-.menu-toggle:checked + .dropdown-menu {
+.dropdown-menu .close-icon {
   display: flex;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.dropdown-menu .close-icon img {
+  width: 24px;
+  height: 24px;
+  filter: invert(1);
+}
+
+.dropdown-menu a {
+  background-color: var(--color-white);
+  color: var(--color-black);
+  font-size: 20px;
+  padding: 10px;
+}
+
+.dropdown-menu a:nth-last-child(-n + 3) {
+  padding: 5px;
+  font-size: 16px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.menu-toggle:checked ~ .dropdown-menu {
+  display: flex;
+}
+
+.menu-toggle:checked + .hamburger-menu .hamburger-icon {
+  display: none;
+}
+
+.menu-toggle:checked + .hamburger-menu .close-icon {
+  display: block;
 }
 
 .title {
@@ -46,6 +89,16 @@ nav {
   transform: translateX(-50%);
   flex-direction: column;
   text-align: center;
+}
+
+.hamburger-menu-title {
+  background-color: var(--color-white);
+}
+
+.hamburger-menu-title h6,
+.hamburger-menu-title h1 {
+  background-color: var(--color-white);
+  color: var(--color-black);
 }
 
 .menu {
@@ -69,12 +122,21 @@ nav {
   background-color: var(--color-blue);
 }
 
-.nav-link {
+a.nav-link {
   cursor: pointer;
   text-decoration: none;
 }
 
-.nav-link:hover {
+a.nav-link:hover {
+  text-decoration: underline;
+}
+
+.nav-link a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.nav-link a:hover {
   text-decoration: underline;
 }
 
@@ -85,6 +147,10 @@ nav {
 
   .dropdown-menu {
     display: none !important;
+  }
+
+  .hamburger-menu {
+    display: none;
   }
 }
 
@@ -99,6 +165,6 @@ nav {
 
 @media (max-width: 720px) {
   .title {
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
 }

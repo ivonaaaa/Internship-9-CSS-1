@@ -1,7 +1,3 @@
-header {
-  padding: 1rem;
-}
-
 .header-content {
   display: flex;
   justify-content: space-between;
@@ -44,6 +40,32 @@ header {
 .header-content > * {
   flex: 1;
   max-width: 50%;
+}
+
+.header-nav {
+  background-color: var(--color-white);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.header-nav a {
+  background-color: var(--color-white);
+  color: var(--color-black);
+  font-size: 0.9rem;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  text-decoration: none;
+}
+
+.header-nav a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 1024px) {
+  .header-nav {
+    display: none;
+  }
 }
 
 @media (max-width: 768px) {

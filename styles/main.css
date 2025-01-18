@@ -14,15 +14,16 @@
 
 .vertical-separator {
   border: none;
-  width: 2px; /* Debljina separatora */
-  height: auto; /* Visina prilagođena sadržaju */
+  width: 2px;
+  height: 300px;
   background-color: var(--color-extra-light-gray);
-  margin: 0 20px; /* Razmak između članka i separatora */
+  margin: 0 20px;
 }
 
 main,
 main a,
 main h2,
+main h3,
 main article,
 main p {
   background-color: var(--color-white) !important;
@@ -40,13 +41,15 @@ main h2 {
   padding: 10px 20px;
   width: 100%;
   text-align: center;
+  font-size: 28px;
+  font-weight: 200;
 }
 
 .articles-container {
   display: flex;
   justify-content: space-around;
   align-items: stretch;
-  gap: 40px;
+  gap: 5x;
   width: 100%;
   flex-wrap: wrap;
   background-color: var(--color-white);
@@ -56,35 +59,45 @@ main h2 {
 
 article {
   flex: 1;
-  max-width: 300px;
+  max-width: 500px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   position: relative;
 }
 
 article img {
   width: 100%;
-  height: 200px;
+  height: 300px;
   object-fit: cover;
 }
 
-article h2 {
-  font-size: 18px;
-  margin: 10px 0;
+article a {
+  font-size: 14px;
+  text-decoration: none;
+}
+
+main h3 {
+  padding-top: 10px;
+  width: 100%;
+  font-weight: 200;
+  font-size: 20px;
+}
+
+main h3:hover {
+  text-decoration: underline;
 }
 
 article p {
   margin: 5px 0;
+  padding: 5px 0 5px 0;
+  font-size: 16px;
+  line-height: 1.5;
 }
 
-@media (max-width: 768px) {
-  .articles-container {
-    flex-direction: column; /* Prebacivanje članaka u stupac */
-    gap: 20px;
-  }
-
-  article:not(:last-child)::after {
-    content: none; /* Uklanjanje separatora na manjim ekranima */
-  }
+article .author {
+  background-color: var(--color-white);
+  color: var(--color-black);
+  font-weight: 550;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }

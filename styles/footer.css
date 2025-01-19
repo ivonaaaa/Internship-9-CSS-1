@@ -80,7 +80,7 @@ footer {
 }
 
 .footer-social img {
-  width: 40px;
+  width: 35px;
   height: auto;
   filter: opacity(0.5);
 }
@@ -92,4 +92,106 @@ footer {
   background-color: var(--color-dark-gray);
 }
 
-/* na 1024 i manje px treba prominit raspored */
+@media screen and (max-width: 1024px) {
+  footer {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: repeat(12, auto);
+  }
+
+  .footer-links-1 {
+    grid-column: 1 / 3;
+    grid-row: 4;
+  }
+
+  .footer-links-2 {
+    grid-column: 3 / 5;
+    grid-row: 4;
+  }
+
+  .footer-subtitle-2 {
+    grid-column: 1 / 3;
+    grid-row: 6;
+  }
+
+  .footer-links-3 {
+    grid-column: 1 / 3;
+    grid-row: 7;
+  }
+
+  .footer-links-4 {
+    grid-column: 3 / 5;
+    grid-row: 7;
+  }
+
+  .footer-links-5 {
+    grid-column: 1 / 3;
+    grid-row: 9;
+  }
+  .footer-links-6 {
+    grid-column: 1 / 3;
+    grid-row: 10;
+  }
+
+  .footer-links-7 {
+    grid-column: 3 / 5;
+    grid-row: 9;
+  }
+  .footer-links-8 {
+    grid-column: 3 / 5;
+    grid-row: 10;
+  }
+
+  .footer-social {
+    grid-column: 1 / 5;
+    grid-row: 11;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .footer-copyright {
+    grid-column: 1 / 5;
+    grid-row: 12;
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer-title {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .footer-title {
+    font-size: 0.6rem;
+  }
+
+  .footer-social img {
+    width: 30px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .footer-title {
+    grid-column: 1 / 4;
+    padding-left: 50px;
+  }
+
+  .footer-subtitle-1,
+  .footer-subtitle-2 {
+    font-size: 0.8rem;
+  }
+
+  .footer-links a {
+    font-size: 0.8rem;
+  }
+
+  .footer-social img {
+    width: 30px;
+  }
+
+  .footer-copyright p {
+    font-size: 0.6rem;
+  }
+}
